@@ -22,6 +22,20 @@ class HomePage extends StatelessWidget {
           title: const Text('Home Screen'),
           actions: [
             GestureDetector(
+              onTap: (){},
+              child: const Icon(Icons.file_upload),
+            ),
+            SizedBox(
+              width: 20,
+            ),
+            GestureDetector(
+              onTap: (){},
+              child: const Icon(Icons.add_photo_alternate_sharp),
+            ),
+            SizedBox(
+              width: 20,
+            ),
+            GestureDetector(
               onTap: () {
                 _logOut(context);
                 print('logouts');
