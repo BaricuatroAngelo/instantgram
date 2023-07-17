@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../tabs/homepage/home.dart';
 import '../tabs/homepage/search.dart';
 import '../tabs/homepage/user_post.dart';
-import 'login.dart';
+import 'login_view.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);

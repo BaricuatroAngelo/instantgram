@@ -1,41 +1,68 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:instagram_clone_app/pages/login.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:instagram_clone_app/pages/login_view.dart';
+import 'package:instagram_clone_app/tabs/homepage/home.dart';
+import 'package:instagram_clone_app/views/components/loading/loading_screen.dart';
+import 'package:instagram_clone_app/views/main/main_view.dart';
+import 'auth/providers/is_logged_in_provider.dart';
 import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.android,
+    options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const MyApp());
+  runApp(
+    const ProviderScope(
+      child: App(),
+    ),
+  );
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class App extends ConsumerWidget {
+  const App({
+    Key? key,
+  }) : super(key: key);
 
-  // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    // calculate widget to show
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-
       darkTheme: ThemeData(
         brightness: Brightness.dark,
         primarySwatch: Colors.blueGrey,
-        indicatorColor: Colors.blueGrey
+        indicatorColor: Colors.blueGrey,
       ),
       theme: ThemeData(
-        brightness: Brightness.dark,
+        brightness: Brightness.light,
         primarySwatch: Colors.blue,
       ),
       themeMode: ThemeMode.dark,
-      home: const LoginPage(),
-      routes: {
-        '/login' : (context) => const LoginPage(),
-      },
+      debugShowCheckedModeBanner: false,
+      home: Consumer(
+        builder: (context, ref, child) {
+          // install the loading screen
+          ref.listen<bool>(
+            isLoadingProvider,
+                (_, isLoading) {
+              if (isLoading) {
+                LoadingScreen.instance().show(
+                  context: context,
+                );
+              } else {
+                LoadingScreen.instance().hide();
+              }
+            },
+          );
+          final isLoggedIn = ref.watch(isLoggedInProvider);
+          if (isLoggedIn) {
+            return const MainView();
+          } else {
+            return const LoginView();
+          }
+        },
+      ),
     );
   }
 }
-
