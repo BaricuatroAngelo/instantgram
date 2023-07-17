@@ -40,7 +40,7 @@ class App extends ConsumerWidget {
       ),
       themeMode: ThemeMode.dark,
       debugShowCheckedModeBanner: false,
-      home: Consumer(
+      /*home: Consumer(
         builder: (context, ref, child) {
           // install the loading screen
           ref.listen<bool>(
@@ -63,6 +63,7 @@ class App extends ConsumerWidget {
           }
         },
       ),
+      */
     );
   }
 }

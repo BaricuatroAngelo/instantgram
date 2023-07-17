@@ -32,6 +32,8 @@ class _MainViewState extends ConsumerState<MainView> {
                 FontAwesomeIcons.film,
               ),
               onPressed: () async {
+
+                /*
                 // pick a video first
                 final videoFile =
                 await ImagePickerHelper.pickVideoFromGallery();
@@ -55,10 +57,14 @@ class _MainViewState extends ConsumerState<MainView> {
                     ),
                   ),
                 );
+
+                */
               },
             ),
             IconButton(
               onPressed: () async {
+
+                /*
                 // pick an image first
                 final imageFile =
                 await ImagePickerHelper.pickImageFromGallery();
@@ -82,13 +88,15 @@ class _MainViewState extends ConsumerState<MainView> {
                     ),
                   ),
                 );
+
+                */
               },
               icon: const Icon(
                 Icons.add_photo_alternate_outlined,
               ),
             ),
             IconButton(
-              onPressed: () async {
+              onPressed: () async { /*
                 final shouldLogOut =
                 await const LogoutDialog().present(context).then(
                       (value) => value ?? false,
@@ -96,6 +104,7 @@ class _MainViewState extends ConsumerState<MainView> {
                 if (shouldLogOut) {
                   await ref.read(authStateProvider.notifier).logOut();
                 }
+                */
               },
               icon: const Icon(
                 Icons.logout,
