@@ -48,6 +48,8 @@ dependencies:
   video_thumbnail: ^0.5.3
   firebase_storage: ^11.2.5
   image: ^4.0.17
+  share_plus: ^7.0.2
+
 
 dev_dependencies:
   flutter_test:
