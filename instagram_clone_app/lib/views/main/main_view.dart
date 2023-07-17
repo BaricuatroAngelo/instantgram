@@ -1,15 +1,19 @@
-import 'package:flutter/cupertino.dart';
+//import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:instagram_clone_app/state/image_upload/helpers/image_picker_helper.dart';
+import 'package:instagram_clone_app/state/image_upload/models/file_type.dart';
+import 'package:instagram_clone_app/state/post_settings/providers/post_settings_provider.dart';
 import 'package:instagram_clone_app/views/components/dialogs/alert_dialog_model.dart';
 import 'package:instagram_clone_app/views/components/dialogs/logout_dialog.dart';
+import 'package:instagram_clone_app/views/create_new_post/create_new_post_view.dart';
 
 import '../../auth/providers/auth_state_provider.dart';
 import '../../tabs/homepage/home.dart';
 import '../../tabs/homepage/search.dart';
 import '../../tabs/homepage/user_post.dart';
-import '../components/constants/strings.dart';
+import 'package:instagram_clone_app/views/components/constants/strings.dart';
 
 class MainView extends ConsumerStatefulWidget {
   const MainView({Key? key}) : super(key: key);
@@ -35,7 +39,7 @@ class _MainViewState extends ConsumerState<MainView> {
               ),
               onPressed: () async {
 
-                /*
+
                 // pick a video first
                 final videoFile =
                 await ImagePickerHelper.pickVideoFromGallery();
@@ -60,13 +64,13 @@ class _MainViewState extends ConsumerState<MainView> {
                   ),
                 );
 
-                */
+
               },
             ),
             IconButton(
               onPressed: () async {
 
-                /*
+
                 // pick an image first
                 final imageFile =
                 await ImagePickerHelper.pickImageFromGallery();
@@ -91,7 +95,7 @@ class _MainViewState extends ConsumerState<MainView> {
                   ),
                 );
 
-                */
+
               },
               icon: const Icon(
                 Icons.add_photo_alternate_outlined,
