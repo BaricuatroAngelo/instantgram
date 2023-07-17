@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:instagram_clone_app/views/components/dialogs/alert_dialog_model.dart';
+import 'package:instagram_clone_app/views/components/dialogs/logout_dialog.dart';
 
 import '../../auth/providers/auth_state_provider.dart';
 import '../../tabs/homepage/home.dart';
@@ -96,7 +98,7 @@ class _MainViewState extends ConsumerState<MainView> {
               ),
             ),
             IconButton(
-              onPressed: () async { /*
+              onPressed: () async {
                 final shouldLogOut =
                 await const LogoutDialog().present(context).then(
                       (value) => value ?? false,
@@ -104,7 +106,7 @@ class _MainViewState extends ConsumerState<MainView> {
                 if (shouldLogOut) {
                   await ref.read(authStateProvider.notifier).logOut();
                 }
-                */
+
               },
               icon: const Icon(
                 Icons.logout,

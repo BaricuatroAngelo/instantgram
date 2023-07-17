@@ -4,7 +4,7 @@ import 'package:instagram_clone_app/auth/models/auth_result.dart';
 
 import '../constants/constants.dart';
 import '../github_sign_in.dart';
-import '../posts/typedef/user_id.dart';
+import 'package:instagram_clone_app/state/posts/typedefs/user_id.dart';
 
 class Authenticator {
   const Authenticator();

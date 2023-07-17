@@ -4,7 +4,7 @@ import 'package:riverpod/riverpod.dart';
 import '../../user_info/models/backend/user_info_storage.dart';
 import '../models/auth_result.dart';
 import '../models/auth_state.dart';
-import '../posts/typedef/user_id.dart';
+import 'package:instagram_clone_app/state/posts/typedefs/user_id.dart';
 
 class AuthStateNotifier extends StateNotifier<AuthState> {
   final _authenticator = const Authenticator();

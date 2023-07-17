@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:instagram_clone_app/auth/providers/is_loading_provider.dart';
 import 'package:instagram_clone_app/pages/login_view.dart';
 import 'package:instagram_clone_app/tabs/homepage/home.dart';
 import 'package:instagram_clone_app/views/components/loading/loading_screen.dart';
@@ -40,7 +41,7 @@ class App extends ConsumerWidget {
       ),
       themeMode: ThemeMode.dark,
       debugShowCheckedModeBanner: false,
-      /*home: Consumer(
+      home: Consumer(
         builder: (context, ref, child) {
           // install the loading screen
           ref.listen<bool>(
@@ -63,7 +64,7 @@ class App extends ConsumerWidget {
           }
         },
       ),
-      */
+
     );
   }
 }

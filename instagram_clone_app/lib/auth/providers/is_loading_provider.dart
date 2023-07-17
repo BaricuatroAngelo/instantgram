@@ -1,4 +1,4 @@
-/*
+
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import 'package:instagram_clone_app/auth/providers/auth_state_provider.dart';
@@ -6,6 +6,8 @@ import 'package:instagram_clone_app/state/comments/providers/delete_comment_prov
 import 'package:instagram_clone_app/state/comments/providers/send_comment_provider.dart';
 import 'package:instagram_clone_app/state/image_upload/providers/image_uploader_provider.dart';
 import 'package:instagram_clone_app/state/posts/providers/delete_post_provider.dart';
+
+part 'is_loading_provider.g.dart';
 
 @riverpod
 bool isLoading(IsLoadingRef ref) {
@@ -21,5 +23,4 @@ bool isLoading(IsLoadingRef ref) {
       isDeletingPost;
 }
 
- */
- 
+

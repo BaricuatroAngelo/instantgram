@@ -3,7 +3,7 @@ import 'dart:collection' show MapView;
 import 'package:flutter/foundation.dart' show immutable;
 
 import '../../auth/constants/firebase_field_name.dart';
-import '../../auth/posts/typedef/user_id.dart';
+import 'package:instagram_clone_app/state/posts/typedefs/user_id.dart';
 
 @immutable
 class UserInfoPayload extends MapView<String, String> {
