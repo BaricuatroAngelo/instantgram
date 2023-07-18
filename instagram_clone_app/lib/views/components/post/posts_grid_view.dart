@@ -29,14 +29,9 @@ class PostsGridView extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => Container()
-
-                /*
-                PostDetailsView(
+                builder: (context) => PostDetailsView(
                   post: post,
                 ),
-                */
-
               ),
             );
           },
