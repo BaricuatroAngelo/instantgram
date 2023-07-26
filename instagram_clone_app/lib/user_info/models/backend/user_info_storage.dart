@@ -3,7 +3,7 @@ import 'package:flutter/foundation.dart';
 
 import '../../../auth/constants/firebase_collection_name.dart';
 import '../../../auth/constants/firebase_field_name.dart';
-import '../../../auth/posts/typedef/user_id.dart';
+import 'package:instagram_clone_app/state/posts/typedefs/user_id.dart';
 import '../user_info_payloads.dart';
 
 

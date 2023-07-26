@@ -1,6 +1,8 @@
+import 'package:firebase_app_check/firebase_app_check.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:instagram_clone_app/auth/providers/is_loading_provider.dart';
 import 'package:instagram_clone_app/pages/login_view.dart';
 import 'package:instagram_clone_app/tabs/homepage/home.dart';
 import 'package:instagram_clone_app/views/components/loading/loading_screen.dart';
@@ -12,6 +14,22 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
+  );
+  await FirebaseAppCheck.instance.activate(
+    webRecaptchaSiteKey: 'recaptcha-v3-site-key',
+    // Default provider for Android is the Play Integrity provider. You can use the "AndroidProvider" enum to choose
+    // your preferred provider. Choose from:
+    // 1. Debug provider
+    // 2. Safety Net provider
+    // 3. Play Integrity provider
+    androidProvider: AndroidProvider.debug,
+    // Default provider for iOS/macOS is the Device Check provider. You can use the "AppleProvider" enum to choose
+    // your preferred provider. Choose from:
+    // 1. Debug provider
+    // 2. Device Check provider
+    // 3. App Attest provider
+    // 4. App Attest provider with fallback to Device Check provider (App Attest provider is only available on iOS 14.0+, macOS 14.0+)
+    appleProvider: AppleProvider.appAttest,
   );
   runApp(
     const ProviderScope(
@@ -63,6 +81,7 @@ class App extends ConsumerWidget {
           }
         },
       ),
+
     );
   }
 }
